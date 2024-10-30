@@ -8,7 +8,7 @@ Amateur’ mathematical practices -- i.e. the work of engineers, professors and 
 
 Since the mid-2000s, historians of mathematics have become interested in these collaborative amateur practices. Initial work on these issues, in the absence of access to structured data, was initially carried out at a qualitative level with archival collections. However, some historians who were contemporaries of the first cultural heritage digitisation projects expressed a desire for structured data to guide more quantitative approaches[^1].
 
-### 1.1 Encoding of the ‘Intermédiaire des Mathématiciens’ tables and their answers
+### 1.1 Encoding the ‘Intermédiaire des Mathématiciens’ tables and their answers
 
 XML/TEI encoding of first-hand bibliographic material could therefore be useful for synthetically mapping amateur mathematical activity as a whole. This would give researchers access to structured data and allow, for example, statistical approaches with a posteriori computational manipulations:
 
@@ -46,7 +46,7 @@ These 'tables', which appear at the end of each volume containing twelve of the 
    
    - a title; a presentation of the legend; the names of the authors (italics indicate a pseudonym); the page number(s) of their contributions; this number may be in bold if it is an answer, otherwise it is a question.
 
-The XML file has been writed after the DTD for check the logic.
+The XML file is written according to the DTD to check the logic.
 
 ---
 
