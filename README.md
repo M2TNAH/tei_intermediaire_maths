@@ -54,8 +54,6 @@ The XML file has been writed after the DTD for check the logic.
 
 ### 2.1 History of mathematics
 
-- [^1]: [Les journaux de mathématiques dans la première moitié du xixe siècle en Europe](https://journals.openedition.org/philosophiascientiae/297#bodyftn32)
-
 - Pauline Romera-Lebret, *La nouvelle géométrie du triangle : passage d'une mathématique d'amateurs à une mathématique d'enseignants (1873-1929)*, Thèse de doctorat en histoire des mathématiques sous la direction d'Evelyne Barbin, Nantes, Université de Nantes, 2009.
 
 - Hélène Gispert, *La France mathématique de la IIIe République avant la Grande Guerre*, Paris, éd. de la Société Mathématique de France, 2015.
@@ -73,3 +71,5 @@ Here are the documents that helped/inspired me write my DTD (non-exaustive list)
 - https://books.openedition.org/oep/688
 
 - [Manuel d'encodage TEI Renaissance et temps modernes](http://www.bvh.univ-tours.fr/XML-TEI/ManuelWeb/Manuel_TEI_BVH.html)
+
+[^1]: [Les journaux de mathématiques dans la première moitié du xixe siècle en Europe](https://journals.openedition.org/philosophiascientiae/297#bodyftn32)
