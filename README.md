@@ -46,7 +46,7 @@ These 'tables', which appear at the end of each volume containing twelve of the 
    
    - a title; a presentation of the legend; the names of the authors (italics indicate a pseudonym); the page number(s) of their contributions; this number may be in bold if it is an answer, otherwise it is a question.
 
-The XML file is written according to the DTD to check the logic.
+The XML file is written according to the DTD to check the logic. (I've filled in a few tags to show how TEI works in relation to the scanned samples.)
 
 ---
 
