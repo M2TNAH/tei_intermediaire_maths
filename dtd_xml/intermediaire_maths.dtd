@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    0. ROOT (two children: metadata and the text himself) -->
+<!ELEMENT tei (teiHeader,text)>
+
+<!--    1. TEI HEADER -->
+<!--    (Here, a minimal configuration for encoding metadata for this kind of printed mathematical document)-->
+<!ELEMENT teiHeader (fileDesc, encodingDesc, profileDesc)>
+    <!ELEMENT fileDesc (titleStmt, publicationsStmt, sourceDesc+)>
+        <!ELEMENT titleStmt (title)>
+        <!ELEMENT publicationsStmt (p)>
+        <!ELEMENT sourceDesc (publishingDirector+, title, publisher, date, country, settlement, volume)>
+            <!ELEMENT publishingDirector (#PCDATA)>
+            <!ELEMENT publisher (#PCDATA)>
+            <!ELEMENT date EMPTY>
+            <!ATTLIST date year CDATA #REQUIRED >
+            <!ELEMENT country (#PCDATA) >
+            <!ELEMENT settlement (#PCDATA) >
+            <!ELEMENT volume EMPTY>
+            <!ATTLIST volume number CDATA #REQUIRED>
+    <!ELEMENT encodingDesc (projectDesc, samplingDesl)>
+        <!ELEMENT  projectDesc (p) >
+        <!ELEMENT  samplingDesl (p) >
+    <!ELEMENT profileDesc (langUsage)>
+        <!ELEMENT langUsage (language+)>
+        <!ELEMENT language (#PCDATA)>
+        <!ATTLIST language ident (fr | en | es | pl | de | it | la) #REQUIRED> 
+        <!-- Languages codes ISO 639-1. -->
+
+<!--    2. TEXT TEI -->
+<!--    2.1 
+        A volume begin with a "front part" (which presents very synthetics informations about the book).
+        He can contain several "group" elements :
+        Each group represents here one issue of magazine (one by month). 
+        So the XML part should be contain 12 groups (also, a volume represents one year of publications.
+        At the end, a volume presents a "back part" containing some tables.-->
+<!ELEMENT text (front, group+, back)>
+<!ELEMENT front (title, date, volume)>
+
+<!--    2.2 Each group is referring to a month (the year is already defined) ; and contains questions an answer part.
+        but any back part -->
+<!ELEMENT group (questions, answers)>
+<!ATTLIST group month (january | february | march | april | may | june | july | august | september | october | november | december) #REQUIRED>
+<!ATTLIST group beginsAtPage CDATA #REQUIRED>
+<!ATTLIST group endsAtPage CDATA #REQUIRED>
+
+<!--  2.3 Here, I propose a minimal description of questions part. 
+        The point, for this exercice (c.f. jpg samples), is the answer and back part)-->
+<!ELEMENT questions (#PCDATA)>
+<!ATTLIST questions beginsAtPage CDATA #REQUIRED>
+<!ATTLIST questions endsAtPage CDATA #REQUIRED>
+<!-- 2.4 Here, the answers part -->
+<!--  "Réponses" part -->
+<!ELEMENT answers (contribution+)>
+<!ATTLIST answers beginsAtPage CDATA #REQUIRED>
+<!ATTLIST answers endsAtPage CDATA #REQUIRED>
+
+<!ELEMENT contribution (questionId, contributor, questionTitle, content, contributor)>
+    <!ELEMENT questionId (#PCDATA)>
+    <!ATTLIST questionId n CDATA #REQUIRED>
+    <!ELEMENT questionTitle (#PCDATA)>
+    <!ELEMENT content (p+)>
+    
+    
+<!--    3. BACK -->
+<!ELEMENT back (contributionsTable, authorTable)>
+<!ATTLIST back beginsAtPage CDATA #REQUIRED>
+<!ATTLIST back endsAtPage CDATA #REQUIRED>
+
+<!--    3.1 "Table des questions et réponses" part -->
+<!ELEMENT contributionsTable (title, legend, table+)>
+<!ATTLIST contributionsTable beginsAtPage CDATA #REQUIRED>
+<!ATTLIST contributionsTable endsAtPage CDATA #REQUIRED>
+<!ELEMENT legend (p+) >
+<!ELEMENT table (head?, row+, separator?, row?)>
+<!ATTLIST table columns CDATA #REQUIRED>
+<!ELEMENT row (cell+)>
+<!ELEMENT cell (#PCDATA)>
+<!ATTLIST cell column (question | answer) #REQUIRED>
+<!ATTLIST cell type (questionRef | categoryRef | pageQuestionRef | pageAnswerRef) #REQUIRED>
+<!ELEMENT separator EMPTY>
+
+<!--    3.2 "Table par nom d'auteurs" part -->
+<!ELEMENT authorTable (title, legend, authorityTable+, separator?, authorityTable?) >
+<!ATTLIST authorTable beginsAtPage CDATA #REQUIRED>
+<!ATTLIST authorTable endsAtPage CDATA #REQUIRED>
+<!ELEMENT authorityTable (entry+)>
+<!ELEMENT entry (contributor, pageOfContribution+)>
+<!ELEMENT pageOfContribution (number) >
+<!ELEMENT number (#PCDATA)> 
+<!ATTLIST number contributionType (question | answer) #REQUIRED>
+
+<!--    4. GENERICS / REPETABLES CHILDREN ELEMENTS-->
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT head (#PCDATA) >
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT page (#PCDATA)>
+<!ELEMENT contributor (#PCDATA)>
+<!ATTLIST contributor role (requester | responder | both) #REQUIRED>
+<!ATTLIST contributor pseudonyme (true | false) #REQUIRED>
+<!ATTLIST contributor authId CDATA #IMPLIED>

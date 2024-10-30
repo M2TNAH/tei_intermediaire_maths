@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tei SYSTEM "intermediaire_maths.dtd">
+<tei>
+   <!-- metadata-->
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title></title>
+         </titleStmt>
+         <publicationsStmt>
+            <p></p>
+         </publicationsStmt>
+         <sourceDesc>
+            <publishingDirector></publishingDirector>
+            <title></title>
+            <publisher></publisher>
+            <date year=""/>
+            <country></country>
+            <settlement></settlement>
+            <volume number=""/>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p></p>
+         </projectDesc>
+         <samplingDesl>
+            <p></p>
+         </samplingDesl>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="fr"></language>
+         </langUsage>
+      </profileDesc>
+   </teiHeader>
+   
+   <!-- The volume -->
+   <text>
+      <front>
+         <title>L'intermédiaire des mathématiques</title>
+         <date year="1896"/>
+         <volume number="3"/>
+      </front>
+      
+      <!-- Each group is referring to a month (the year is already defined) -->
+      <!-- Just for show the logic, i've only written 1 groups on 12 -->
+      <!-- The ‘questions’ section is minimalist, as I didn't choose to ‘sample’ it.  -->
+      <group month="april" beginsAtPage="1" endsAtPage="20">
+         <questions beginsAtPage="1" endsAtPage="10"></questions>
+         <!-- [...] -->
+         
+         <!-- SAMPLE 1/3 : "Réponses" part -->
+         <answers beginsAtPage="61" endsAtPage="70">
+            <contribution>
+               <questionId n="96">96</questionId>
+               <contributor role="requester" pseudonyme="false">Asaph Hall</contributor>
+               <questionTitle>Au sujet de l'orbite de Mercure</questionTitle>
+               <content>
+                  <p>Ayant remarqué sur un programme des prix [...]</p>
+               </content>
+               <!-- We can see a (false) authority reference for Brocard-->
+               <contributor role="responder" pseudonyme="false" authId="394501">H. Brocard</contributor>
+            </contribution>
+            
+            <contribution>
+               <questionId n="101">101</questionId>
+               <!-- We can see a (false) authority reference for J. Voyer -->
+               <contributor role="requester" pseudonyme="false" authId="57483">J. Voyer</contributor>
+               <questionTitle>Sur l'équilibre d'un fil pesant et inextensible</questionTitle>
+               <content>
+                  <p>On trouve la solution exacte du problème dans [...]</p>
+               </content>
+               <!-- We can see a (false) authority reference for Peano-->
+               <contributor role="responder" pseudonyme="false" authId="16901">G. Peano</contributor>
+            </contribution>
+         </answers>
+      </group>
+      
+      <!-- [...] Here, we can imagine 11 additional <group>, one for each months...-->
+      
+      <back beginsAtPage="301" endsAtPage="306">
+         <!-- SAMPLE 2/3 -->
+         <contributionsTable beginsAtPage="61" endsAtPage="">
+            <title>Table des questions et réponses</title>
+            <legend>
+               <p>Chacune des questions publiées dans le Tome III...</p>
+               <p>[...]</p>
+               <p>(...]</p>
+            </legend>
+            <table columns="2">
+               <head></head>
+               <row>
+                  <cell column="question" type="questionRef">8</cell>
+                  <cell column="question" type="categoryRef">L3</cell>
+                  <cell column="question" type="pageQuestionRef">3</cell>
+                  <cell column="answer" type="pageAnswerRef">155</cell>
+               </row>
+               <row>
+                  <cell column="question" type="questionRef">35</cell>
+                  <cell column="question" type="categoryRef">V</cell>
+                  <cell column="question" type="pageQuestionRef">9</cell>
+                  <cell column="answer" type="pageAnswerRef">87</cell>
+               </row>
+               <separator/>
+               <row>
+                  <cell column="question" type="questionRef">209</cell>
+                  <cell column="question" type="categoryRef">O</cell>
+                  <cell column="question" type="pageQuestionRef">102</cell>
+                  <cell column="answer" type="pageAnswerRef">225</cell>
+               </row>
+               <!-- [...] -->
+            </table>
+         </contributionsTable>
+         
+         <!-- Sample 3/3-->
+         <authorTable beginsAtPage="301" endsAtPage="306">
+            <title>Table par noms d'auteurs</title>
+            <legend>
+               <p>Les noms inscrits sont exclusivement ceux des auteurs de questions ou [...}</p>
+            </legend>
+            
+            <authorityTable>
+               <!-- Some exemples of entries for this table-->
+               <entry>
+                  <contributor role="responder" pseudonyme="false">Akar (A.)</contributor>
+                  <pageOfContribution>
+                     <number contributionType="answer">110</number>
+                  </pageOfContribution>
+                  <pageOfContribution>
+                     <number contributionType="answer">112</number>
+                  </pageOfContribution>
+               </entry>
+               <entry>
+                  <contributor role="responder" pseudonyme="true">Alauda</contributor>
+                  <pageOfContribution>
+                     <number contributionType="question">180*</number>
+                  </pageOfContribution>
+                  <pageOfContribution>
+                     <number contributionType="question">247</number>
+                  </pageOfContribution>
+               </entry>
+               <!-- [...] -->
+            </authorityTable>
+            <separator/>
+            <authorityTable>
+               <entry>
+                  <contributor role="responder" pseudonyme="false">Bioche (C.)</contributor>
+                  <pageOfContribution>
+                     <number contributionType="answer">21</number>
+                  </pageOfContribution>
+               </entry>
+               <!-- [...] -->
+            </authorityTable>
+         </authorTable>
+      </back>
+   </text>
+</tei>
